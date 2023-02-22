@@ -43,8 +43,8 @@ public class ArchivesPlugins implements Plugin<Project> {
         extension.setBucket("jcohy-test");
         String buildDir = project.getBuildDir().getName();
         extension.getUpload().setSource(buildDir + "/reference");
-        extension.setAccessKey("xxx");
-        extension.setSecretKey("xxx");
+        extension.setAccessKey(System.getenv("OSS_ACCESS_KEY"));
+        extension.setSecretKey(System.getenv("OSS_SECRET_KEY"));
         extension.getUpload().setPrefix("/docs");
         extension.getUpload().setIgnoreSourceDir(true);
     }
