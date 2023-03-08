@@ -7,9 +7,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-import com.jcohy.convention.conventions.AsciidoctorConventions;
-import com.jcohy.convention.conventions.ConventionsPlugin;
-import com.jcohy.convention.deployed.DeployedPlugin;
+import io.github.jcohy.gradle.asciidoctor.AsciidoctorConventionsPlugin;
+import io.github.jcohy.gradle.conventions.ConventionsPlugin;
+import io.github.jcohy.gradle.deployed.DeployedPlugin;
 import org.asciidoctor.gradle.jvm.AbstractAsciidoctorTask;
 import org.asciidoctor.gradle.jvm.AsciidoctorJExtension;
 import org.asciidoctor.gradle.jvm.AsciidoctorJPlugin;
@@ -35,6 +35,7 @@ public class JcohyAsciidoctorPlugins implements Plugin<Project> {
     public void apply(Project project) {
         PluginContainer plugins = project.getPlugins();
         plugins.apply(AsciidoctorJPlugin.class);
+        plugins.apply(AsciidoctorConventionsPlugin.class);
         plugins.apply(ConventionsPlugin.class);
         plugins.apply(DeployedPlugin.class);
         createAsciidoctorMultiPageTask(project);
@@ -88,7 +89,7 @@ public class JcohyAsciidoctorPlugins implements Plugin<Project> {
             String language = asciidoctorTask.getLanguages().contains("zh-cn") ? "/zh-cn": "";
             project.delete(project.getBuildDir() + "/docs/asciidocMultipage" + language+ "/img/banner-logo.svg");
             try {
-                Files.copy(Objects.requireNonNull(AsciidoctorConventions.class.getResourceAsStream("/data/images/banner-logo.svg")),
+                Files.copy(Objects.requireNonNull(AsciidoctorConventionsPlugin.class.getResourceAsStream("/data/images/banner-logo.svg")),
                         Paths.get(project.getBuildDir() + "/docs/asciidocMultipage" + language+ "/img/banner-logo.svg"));
             }
             catch (IOException e) {

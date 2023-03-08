@@ -13,8 +13,9 @@ repositories {
 dependencies {
 	implementation("org.asciidoctor:asciidoctor-gradle-jvm:3.3.2")
 	implementation("org.asciidoctor:asciidoctor-gradle-jvm-pdf:3.3.2")
-	implementation("com.jcohy.gradle:jcohy-java-convention:${jcohyGradleVersion}")
-	implementation("com.jcohy.gradle:jcohy-ali-oss:${jcohyGradleVersion}")
+	implementation("io.github.jcohy:jcohy-java-convention:${jcohyGradleVersion}")
+	implementation("io.github.jcohy:jcohy-ali-oss:${jcohyGradleVersion}")
+	implementation("io.github.jcohy:jcohy-asciidoctor:${jcohyGradleVersion}")
 	implementation("org.springframework:spring-core:5.2.2.RELEASE")
 }
 

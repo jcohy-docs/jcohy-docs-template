@@ -2,9 +2,9 @@ package com.jcohy.docs.build;
 
 import java.io.File;
 
-import com.jcohy.oss.OssUploadPlugin;
-import com.jcohy.oss.OssUploadTask;
-import com.jcohy.oss.dsl.AliOssExtension;
+import io.github.jcohy.gradle.oss.OssUploadPlugin;
+import io.github.jcohy.gradle.oss.OssUploadTask;
+import io.github.jcohy.gradle.oss.dsl.AliOssExtension;
 import org.asciidoctor.gradle.jvm.AbstractAsciidoctorTask;
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
