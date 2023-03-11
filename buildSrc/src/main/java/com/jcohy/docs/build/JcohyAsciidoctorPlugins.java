@@ -81,6 +81,7 @@ public class JcohyAsciidoctorPlugins implements Plugin<Project> {
         attributes.put("doc-root","https://docs.jcohy.com");
         attributes.put("spring-docs-prefix","https://docs.spring.io/spring-framework/docs/");
         attributes.put("gh-samples-url","https://github.com/spring-projects/spring-security/master/");
+        attributes.put("docs-java", project.getRootProject().getProjectDir() + "/src/main/java/com/jcohy/sample/redis");
     }
 
     private void replaceLogo(Project project, AbstractAsciidoctorTask asciidoctorTask) {
