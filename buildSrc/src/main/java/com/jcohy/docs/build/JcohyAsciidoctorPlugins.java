@@ -74,6 +74,10 @@ public class JcohyAsciidoctorPlugins implements Plugin<Project> {
         addAsciidoctorTaskAttributes(project,attributes);
         asciidoctorTask.attributes(attributes);
         asciidoctorTask.attributes(docsUrlMaps);
+        project.getConfigurations().getByName("asciidoctorExtensions",(configuration) -> {
+            configuration.getDependencies().add(project.getDependencies()
+                    .create("org.asciidoctor:asciidoctorj-pdf:1.5.3"));
+        });
     }
 
     private String getVersion() {
