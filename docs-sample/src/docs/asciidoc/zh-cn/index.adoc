@@ -1,6 +1,5 @@
 [[index]]
 = Spring Boot 中文文档
-v{version}
 
 参考文档包括以下章节:
 
